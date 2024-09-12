@@ -119,6 +119,7 @@ private:
     }
 };
 
+// Simulate the system in code 
 int main() {
     Customer customer1("Pasta");
     Table table1(1);
