@@ -30,8 +30,9 @@ Defines the actions that the waiter can perform, such as taking orders, preparin
 Visual Code Studio
 
 How to Build and Run
-1. Clone this repository.
-2. Compile the code using a C++ compiler.
+1. Open code.cpp file
+2. Copy raw code in code.cpp 
+3. Compile the code using a C++ compiler.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
