@@ -16,13 +16,13 @@ Table Management: Each table is associated with a customer, and the order status
 
 ## Class Explanation
 Class Breakdown
-1. IOrder (Order Interface)
+1. Order (Order Interface)
 Defines the behavior for managing the order details and status.
-2. ICustomer (Customer Interface)
+2. Customer (Customer Interface)
 Manages customer-related actions such as placing orders, tracking emotional level, and displaying customer information.
-3. ITable (Table Interface)
+3. Table (Table Interface)
 Manages table-specific operations, such as assigning customers and displaying order status.
-4. IWaiter (Waiter Interface)
+4. Waiter (Waiter Interface)
 Defines the actions that the waiter can perform, such as taking orders, preparing them in the kitchen, and delivering them to the customer.
 
 ### Built With
