@@ -53,6 +53,6 @@ Additional Features: The system could be extended to include a notification syst
 Your Name - Ibrahim Ar-Rafii        (5223600066)
           - Purba Tri Julia Putra   (5223600069)
 
-Project Link:(https://github.com/putra-17/OOP_B.Dea/tree/main)
+Project Link: (https://github.com/putra-17/OOP_B.Dea/tree/main)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
