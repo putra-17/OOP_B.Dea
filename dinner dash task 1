@@ -23,9 +23,9 @@ class Customer {
 private:
     Order order;
     int emotionLevel;  // Ranges from 1 (unhappy) to 5 (very happy)
-
+    
 public:
-    Customer(const std::string& orderDetails)
+    Customer(const std::string& orderDetails) 
         : order(orderDetails), emotionLevel(5) {}
 
     void placeOrder(const std::string& orderDetails) {
@@ -66,19 +66,19 @@ public:
         OrderStatus status = customer->getOrder().getStatus();
         std::string statusMessage;
         switch (status) {
-        case OrderStatus::NotYetTaken:
-            statusMessage = "Not Yet Taken";
-            break;
-        case OrderStatus::InKitchen:
-            statusMessage = "In Kitchen";
-            break;
-        case OrderStatus::Served:
-            statusMessage = "Served";
-            break;
+            case OrderStatus::NotYetTaken:
+                statusMessage = "Not Yet Taken";
+                break;
+            case OrderStatus::InKitchen:
+                statusMessage = "In Kitchen";
+                break;
+            case OrderStatus::Served:
+                statusMessage = "Served";
+                break;
         }
 
-        std::cout << "Table " << tableNumber << " - Order: " << customer->getOrder().getDetails()
-            << " - Status: " << statusMessage << std::endl;
+        std::cout << "Table " << tableNumber << " - Order: " << customer->getOrder().getDetails() 
+                  << " - Status: " << statusMessage << std::endl;
     }
 };
 
@@ -88,8 +88,8 @@ public:
         Customer* customer = table.getCustomer();
         if (customer != nullptr && customer->getOrder().getStatus() == OrderStatus::NotYetTaken) {
             customer->getOrder().setStatus(OrderStatus::InKitchen);
-            std::cout << "Waiter has taken order from Table " << table.getTableNumber()
-                << " and sent it to the kitchen: " << customer->getOrder().getDetails() << std::endl;
+            std::cout << "Waiter has taken order from Table " << table.getTableNumber() 
+                      << " and sent it to the kitchen: " << customer->getOrder().getDetails() << std::endl;
         }
     }
 
@@ -107,8 +107,8 @@ public:
         if (customer != nullptr && customer->getOrder().getStatus() == OrderStatus::InKitchen) {
             customer->getOrder().setStatus(OrderStatus::Served);
             customer->resetEmotion();  // Reset customer emotion to 5
-            std::cout << "Waiter has delivered the order to Table " << table.getTableNumber()
-                << ": " << customer->getOrder().getDetails() << std::endl;
+            std::cout << "Waiter has delivered the order to Table " << table.getTableNumber() 
+                      << ": " << customer->getOrder().getDetails() << std::endl;
             customer->displayEmotion();  // Display reset emotion level
         }
     }
