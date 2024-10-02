@@ -5,13 +5,13 @@ Restaurant Order Management System
 ## Overview
 This project is a simple simulation of a Diner Dash game implemented in C++. It follows the Single Responsibility Principle (SRP) by structuring the code into multiple classes, each handling a specific aspect of the game. The main components of the simulation include:
 
-Classes :
+### Classes :
 Customer: Represents a customer in the restaurant. Manages emotions and orders.
 Table: Manages the status of a table and the customer assigned to it.
 Kitchen: Responsible for preparing and serving food orders.
 OrderManager: Coordinates the interaction between customers, tables, and the kitchen, managing the order flow.
 
-Features :
+### Features :
 Order Management: Customers can place orders, and the system tracks the status of the order (Not Yet Taken, In Kitchen, Served).
 Customer Emotion: The customer's emotional level decreases as they wait for their order and resets once the order is served.
 Waiter Actions: The waiter takes the order, sends it to the kitchen, and delivers it when ready.
