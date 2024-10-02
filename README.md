@@ -81,11 +81,11 @@ Public Methods:
 Constructor: Initializes the OrderManager with references to the Kitchen and Table instances.
 void processOrders(): Manages the order processing by iterating over the customers at the table, preparing their orders, serving them, and adjusting their emotional states based on their queue position.
 
-### Built With
+
+## Built With
 
 Visual Code Studio
-
-How to Build and Run
+How to Run the Code
 1. Open dinerdash.cpp file
 2. Copy raw code in dinerdash.cpp 
 3. Compile the code using a C++ compiler.
