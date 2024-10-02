@@ -22,9 +22,9 @@ Delayed Actions : This code has chrono to make the code more realisatic when pre
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Class Explanation
-
 Class Breakdown
-## 1. Customer Class
+
+# 1. Customer Class
 The Customer class represents an individual customer in the simulation. It holds information about the customer's emotional state, order, and a unique identifier (number).
 
 Members:
@@ -47,7 +47,7 @@ Customer Information:
 getNumber() const: Returns the customer's unique identifier.
 printStatus() const: Prints the customer's current emotional state and order status.
 
-## 2. Kitchen Class
+# 2. Kitchen Class
 The Kitchen class is responsible for preparing and serving the orders placed by customers.
 
 Members:
@@ -55,7 +55,7 @@ Public Methods:
 std::string prepareOrder(const std::string& order): Simulates the preparation of an order with a delay, and returns the prepared order.
 std::string giveOrder(const std::string& order): Simulates serving the order with a delay, and returns the served order.
 
-## 3. Table Class
+# 3. Table Class
 The Table class manages a collection of customers seated at the table.
 
 Members:
@@ -68,7 +68,7 @@ void setCustomer(Customer* customer): Adds a customer to the table's list.
 void printTableStatus() const: Iterates over all customers and prints their status.
 const std::vector<Customer*>& getCustomers() const: Returns a reference to the list of customers at the table.
 
-## 4. OrderManager Class
+# 4. OrderManager Class
 The OrderManager class is responsible for managing the flow of order processing between the customers and the kitchen.
 
 Members:
