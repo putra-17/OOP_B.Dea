@@ -3,7 +3,7 @@
 Restaurant Order Management System
 
 ## Overview
-This project is a simple simulation of a Diner Dash-style game implemented in C++. It follows the Single Responsibility Principle (SRP) by structuring the code into multiple classes, each handling a specific aspect of the game. The main components of the simulation include:
+This project is a simple simulation of a Diner Dash game implemented in C++. It follows the Single Responsibility Principle (SRP) by structuring the code into multiple classes, each handling a specific aspect of the game. The main components of the simulation include:
 
 Classes :
 Customer: Represents a customer in the restaurant. Manages emotions and orders.
