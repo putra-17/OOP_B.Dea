@@ -37,14 +37,12 @@ public:
     // Prepare the order
     std::string prepareOrder(const std::string& order) {
         std::cout << "Kitchen is preparing: " << order << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(2)); // Simulate delay for preparation
         return order + " is ready!";
     }
 
     // Give the order
     std::string giveOrder(const std::string& order) {
         std::cout << "Kitchen is giving the order: " << order << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(1)); // Simulate delay for serving
         return order;
     }
 };
