@@ -22,13 +22,15 @@ public:
     void setOrder(const std::string& newOrder) { order = newOrder; }
     std::string getOrder() const { return order; }
 
+    // Set customer order to empty (after serving)
+    void clearOrder() { order = ""; }
+
     // Get customer number
     int getNumber() const { return number; }
 
     // Print customer info
     void printStatus() const {
-        std::cout << "Customer " << number << " has emotion level: " << emotions
-            << " and ordered: " << order << std::endl;
+        std::cout << "Customer " << number << " has emotion level: " << emotions << std::endl;
     }
 };
 
@@ -50,8 +52,11 @@ public:
 class Table {
 private:
     std::vector<Customer*> customers;
+    int tableNumber;
 
 public:
+    Table(int tableNumber) : tableNumber(tableNumber) {}
+
     // Set customers for the table
     void setCustomer(Customer* customer) {
         customers.push_back(customer);
@@ -66,6 +71,9 @@ public:
 
     // Get all customers
     const std::vector<Customer*>& getCustomers() const { return customers; }
+
+    // Get table number
+    int getTableNumber() const { return tableNumber; }
 };
 
 class OrderManager {
@@ -84,10 +92,17 @@ public:
             auto customer = customers[i];
             std::string order = customer->getOrder();
             if (!order.empty()) {
+                // Prepare and serve the order with a delay
                 std::string preparedOrder = kitchen.prepareOrder(order);
+                
+                std::this_thread::sleep_for(std::chrono::seconds(2)); // Delay of 2 seconds
+                
                 std::string servedOrder = kitchen.giveOrder(preparedOrder);
+                std::cout << "Served Customer " << customer->getNumber() 
+                          << " with: " << servedOrder << std::endl;
 
-                std::cout << "Served Customer " << customer->getNumber() << " with: " << servedOrder << std::endl;
+                // After serving, replace order with table number
+                customer->setOrder("Table " + std::to_string(table.getTableNumber()));
 
                 // Decrease emotions based on queue position
                 int waitTime = static_cast<int>(i) * 1;  // Change emotional decrease to be 1 per position
@@ -99,7 +114,7 @@ public:
 
 // Main function to simulate the game with user input
 int main() {
-    int numberOfCustomers;
+    int numberOfCustomers, tableNumber;
 
     // Ask for the number of customers
     std::cout << "Enter number of customers: ";
@@ -108,7 +123,7 @@ int main() {
 
     // Create a kitchen and a table
     Kitchen kitchen;
-    Table table;
+    Table table(tableNumber);
 
     // Collect input for each customer
     for (int i = 0; i < numberOfCustomers; ++i) {
@@ -118,7 +133,7 @@ int main() {
         Customer* customer = new Customer(i + 1); // Customer number starts from 1
 
         // Get customer order
-        std::cout << "Enter order for Customer " << (i + 1) << ": ";
+        std::cout << "Enter table and order for Customer " << (i + 1) << ": ";
         std::getline(std::cin, order);
 
         // Set the order for the customer
